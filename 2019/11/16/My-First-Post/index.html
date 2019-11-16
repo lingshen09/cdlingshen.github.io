@@ -1,157 +1,260 @@
-
-
-
 <!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,inital-scale=1,user-scalable=no">
-  <title>My First Post [ Python Papapa ]</title>
-  <!-- bootstrapcss文件 -->
- <!--  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-<!--   <link rel="stylesheet" href="/cdlingshen.github.io/css/zhl.css">
- -->
-  
-    <!-- stylesheets list from config.yml -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <title>My First Post | Python Papapa</title>
+        
+        <link rel="alternate" href="/atom.xml" title="Python Papapa" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/cdlingshen.github.io//favicon.png">
+        
+        <link rel="stylesheet" href="/cdlingshen.github.io/css/normalize.css">
+        <link rel="stylesheet" href="/cdlingshen.github.io/css/style.css">
+        <link rel="stylesheet" href="/cdlingshen.github.io/css/common.css">
+        <link rel="stylesheet" href="/cdlingshen.github.io/css/markdown.css">
+    </head>
+    <body onscroll="scrollYListener()">
+        <div class="wrapper">
+            <div class="mobile_menu_btn">
+  <button id="mobile_menu_btn" class="c-hamburger c-hamburger--htx">
+  <span>toggle menu</span>
+  </button>
+</div>
+<div class="slide_menu">
+  <nav class="nav_scroll">
+    <ul class="clearfix">
+      
+      
+      <li class=""> <a href="/cdlingshen.github.io/">Home</a> </li>
+      
+      
+      <li class="active dotted"> <a href="/cdlingshen.github.io/archives">Archive</a> </li>
+      
+    </ul>
+  </nav>
+  <div class="social">
+    <ul class="clearfix">
+      
+      
+      <li> <a href="http://github.com/cheng-kang" target="_blank"> <img src="/cdlingshen.github.io/img/GitHub.png"> </a> </li>
+      
+      
+      
+      <li> <a href="http://www.weibo.com/progrant" target="_blank"> <img src="/cdlingshen.github.io/img/Weibo.png"> </a> </li>
+      
+      
+      
+      <li> <a href="https://twitter.com/ScotlAnt" target="_blank"> <img src="/cdlingshen.github.io/img/Twitter.png"> </a> </li>
+      
+      
+      
+      
+    </ul>
+  </div>
+  <div class="copyright">
+    &copy; 2019 Python Papapa | Provided By  <a title="cdlingshen" href="http://chengkang.me/" target="_blank">cdlingshen</a>
+  </div>
+</div>
+<header>
+  <div class="mobile_navbar clearfix">
     
-      <link rel="stylesheet" href="/css/fork-awesome.min.css">
+    <div class="logo">
+      <a href="/cdlingshen.github.io/">Python Papapa</a>
+    </div>
     
-      <link rel="stylesheet" href="/css/zhl.css">
-    
-  
-  
-</head>
-<body>
-<div class="container-fluid">
-  <div class="row">
-  <div id="wrap" class="col-md-12">
-    <div id="header">
-	<div id="header-left">
-	<h1 id="header-title"> 
-	<a href="/cdlingshen.github.io/">
-		Python Papapa
-	</a>
-	</h1>
-	
-	<h2 id="header-subtitle">
-		<a href="/cdlingshen.github.io/">learning for fun</a>
-	</h2>
-		
-	</div>
-	<div id="header-right">
-		
-		
-		<a href="/cdlingshen.github.io/"  title="home"><i class="fa fa-home ">home</i></a>
-		
-		<a href="https://github.com/lizehongss/demo_show" target="_blank" rel="noopener"  title="demo"><i class="fa fa-code ">demo</i></a>
-		
-		<a href="/cdlingshen.github.io/about"  title="about"><i class="fa fa-user ">about</i></a>
-		
-		<a href="/cdlingshen.github.io/"  title="music"><i class="fa fa-music ">music</i></a>
-		
-		
+  </div>
+  <div class="row clearfix no_form">
+    <div class="logo">
+      <a href="/cdlingshen.github.io/">Python Papapa</a>
+    </div>
+    <nav class="nav_scroll">
+      <ul class="clearfix">
+      
+      
+      <li class=""> <a href="/cdlingshen.github.io/">Home</a> </li>
+      
+      
+      <li class="active dotted"> <a href="/cdlingshen.github.io/archives">Archive</a> </li>
+      
+      </ul>
+    </nav>
+  </div>
+</header>
+            <div class="section" id="Search">
+	<div class="section_content">
+		<h3>
+		Search
+		<br>
+		Find out if your question is answered here
+		</h3>
+		<div id="search-content" class="search-content-modal unexpanded">
+			<div id="search-view">
+				<div class="search-info box">
+					<input type="text" id="search-input" placeholder="Enter Keyword" onkeyup="searchInputOnKeyUp()">
+					<div class="magnifying-glass" id="search-button" onclick="searchInSite(event)">
+						<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500">
+						<path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" d="m280,278a153,153 0 1,0-2,2l170,170m-91-117 110,110-26,26-110-110"></path>
+					</svg>
+				</div>
+			</div>
+			<div class="modal" id="search-result" style="display:none">
+				<h2 id="search-result-title">Found 0 match(es):</h2>
+				<ul id="search-result-list">
+				</ul>
+				<span>
+					<button onclick="dismissSearchResultModal()">×</button>
+				</span>
+			</div>
+		</div>
 	</div>
 </div>
 
-  </div>
-  </div>
-  <div id="content" class="row">
-    <div id="content-left" class="col-md-4">
-      
 
-	
+<script src="/cdlingshen.github.io/js/lunr.min.js"></script>
+<script>
+var content = lunr(function () {
+this.field('title');
+this.field('content');
+this.ref('id');
+})
+	var postsAllText = (function () {/*::qa::lurn::qa::My First Post::qa::lurn::qa::https://lingshen09.github.io/cdlingshen.github.io/2019/11/16/My-First-Post/::qa::lurn::qa::&lt;p&gt;摘要&lt;/p&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;
+&lt;p&gt;正文&lt;/p&gt;
+::qa::lurn::qa::Hello World::qa::lurn::qa::https://lingshen09.github.io/cdlingshen.github.io/2019/11/15/hello-world/::qa::lurn::qa::&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;Quick-Start&#34;&gt;&lt;a href=&#34;#Quick-Start&#34; class=&#34;headerlink&#34; title=&#34;Quick Start&#34;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&#34;Create-a-new-post&#34;&gt;&lt;a href=&#34;#Create-a-new-post&#34; class=&#34;headerlink&#34; title=&#34;Create a new post&#34;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo new &lt;span class=&#34;string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-	
-	<div class="widget-wrap">
-		<h3 class="widget-title fa fa-tags">标签</h3>
-		<div class="widget tags">
-		<a class="tag-link" href="/cdlingshen.github.io/tags/Python/" rel="tag">Python<span class="tag-count">1</span></a> <a class="tag-link" href="/cdlingshen.github.io/tags/Study/" rel="tag">Study<span class="tag-count">1</span></a>
-		</div>
-	</div>
+&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/writing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Run-server&#34;&gt;&lt;a href=&#34;#Run-server&#34; class=&#34;headerlink&#34; title=&#34;Run server&#34;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/server.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Generate-static-files&#34;&gt;&lt;a href=&#34;#Generate-static-files&#34; class=&#34;headerlink&#34; title=&#34;Generate static files&#34;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-	
-	<div class="widget-wrap">
-		<h3 class="widget-title fa fa-archive">归档</h3>
-		<div class="widget">
-			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/cdlingshen.github.io/archives/2019/">2019</a><span class="archive-list-count">2</span></li></ul>
-		</div>
-	</div>
+&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/generating.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Deploy-to-remote-sites&#34;&gt;&lt;a href=&#34;#Deploy-to-remote-sites&#34; class=&#34;headerlink&#34; title=&#34;Deploy to remote sites&#34;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+::qa::lurn::qa::*/}).toString();
+	var arr = postsAllText.split("::qa::lurn::qa::");
+	for(var i = 1; i+2 <= arr.length - 3; i+=3) {
+	content.add({
+	id: Math.floor(i/3),
+	title: arr[i],
+	content: arr[i+2]
+	});
+	}
+	function searchInSite() {
+		var keyword = document.getElementById("search-input").value;
+		var result = content.search(keyword);
+		if (result.length == 0) {
+			document.getElementById("search-result-title").innerHTML = "Found 0 match.";
+		} else {
+			document.getElementById("search-result-title").innerHTML = "Found "+result.length+" match(es):";
+		}
+		document.getElementById("search_result_list").innerHTML = "";
+		for(var i = 0; i < result.length; i++) {
+			document.getElementById("search-result-list").innerHTML += '<li><a href="'+arr[result[i].ref*3+2]+'">'+arr[result[i].ref*3+1]+'</a></li>';
+		}
+		document.getElementById("search-result").style.display = "block";
+	}
+	function searchInputOnKeyUp() {
+		event.preventDefault();
+	if (event.keyCode == 13) {
+	searchInSite();
+	}
+	}
+</script>
 
-
-    </div>
-    <div id="content-right" class="col-md-8">
-    
-<article id="post">
-	<div class="post-title">
-  <h1>My First Post</h1>
-  	</div>
-  <div class="page-meta">
-  	<span class="fa-wrap">
-  		<i class="fa fa-clock-o"></i>
-  		<span class="date-meta">2019-11-16</span>
-  	</span>
-  	<span class="fa-wrap">
-  		
-  		<i class="fa fa-tags"></i>
-  		<span class="tags-meta">Python</span>
-  		
-  	</span>
-  	<span class="fa-wrap">
-  		
-  	</span>
-  </div>
-  <div class="post-content">
-  <p>摘要</p>
+<script>
+function dismissSearchResultModal() {
+	document.getElementById("search-result").style.display = "none";
+}
+</script>
+</div>
+<div class="section" id="Post">
+	<div class="section_content">
+		<p class="breadcrumb"><a href="/cdlingshen.github.io/">Q&amp;A</a> / My First Post</p>
+		<div class="page_content mdcss">
+			<p>摘要</p>
 <a id="more"></a>
 <p>正文</p>
 
+		</div>
 	</div>
-</article>
 
-
-
-    </div>
-  </div>
-  <div class="row">
-<div id="bottom" class="col-md-12"> 
-  <div class="bottom-nav">
 	
-	
-	<a href="https://github.com/lizehongss" class="fa fa-github fa-2x" target="_blank" title="Follow me" ></a>
+
 	
 	
 </div>
-<div class="bottom-info">
-	&copy; 2019 cdlingshen<br>
-	Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-	theme <a href="https://github.com/lizehongss/hexo-theme-zhl" target="_blank">zhl</a>
-</div>
-</div>
-</div>
-</div>
-<div id="tool">
-  <ul>
-    <li class="fa fa-angle-up top" id="top"></li>
-  </ul>
-</div>
-  <div class="bg_content">
-    <canvas id="canvas"></canvas>
-  </div>
-  
-  <!-- scripts list from theme config.yml -->
-  
-    <script src="/js/zhl.js"></script>
-  
-    <script src="/js/bj.js"></script>
-  
 
-<!-- jQ cdn  -->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<!-- bootstrap js cdn-->
-<!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+	
+	
+	
+	<div class="section" id="Pagenation">
+		
+		
+		<a href="/cdlingshen.github.io/2019/11/15/hello-world/">Next</a>
+		
+	</div>
+	
 
-
-</body>
+            <footer>
+	<div class="footer_wrap">
+		<div class="social">
+			<ul class="clearfix">
+				
+				
+				<li> <a href="http://github.com/cheng-kang" target="_blank"> <img src="/cdlingshen.github.io/img/GitHub.png"> </a> </li>
+				
+				
+				
+				<li> <a href="http://www.weibo.com/progrant" target="_blank"> <img src="/cdlingshen.github.io/img/Weibo.png"> </a> </li>
+				
+				
+				
+				<li> <a href="https://twitter.com/ScotlAnt" target="_blank"> <img src="/cdlingshen.github.io/img/Twitter.png"> </a> </li>
+				
+				
+				
+				
+			</ul>
+		</div>
+		<img src="/cdlingshen.github.io/img/line.jpg">
+		<div class="copyright">
+			&copy; 2019 Python Papapa | Provided By  <a title="cdlingshen" href="http://chengkang.me/" target="_blank">cdlingshen</a>
+		</div>
+	</div>
+</footer>
+        </div>
+        <script type="text/javascript">
+        function scrollYListener() {
+        var searchHeight = parseInt(getComputedStyle(document.getElementById("Search")).height)
+        var width = document.documentElement.clientWidth;
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+        var scrollY = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        if (scrollY >= searchHeight-10) {
+        document.getElementsByTagName('header')[0].style.backgroundColor = "#cd4b4b";
+        document.getElementsByClassName('logo')[0].style.backgroundColor = "#cd4b4b";
+        } else {
+        document.getElementsByTagName('header')[0].style.backgroundColor = "#4f8e8e";
+        document.getElementsByClassName('logo')[0].style.backgroundColor = "#4f8e8e";
+        }
+        }
+        var isMenuExpanded = false;
+        document.getElementById("mobile_menu_btn").onclick = function toggleMobileMenu() {
+        if (isMenuExpanded) {
+        document.getElementsByClassName('slide_menu')[0].className = "slide_menu";
+        } else {
+        document.getElementsByClassName('slide_menu')[0].className += " mobile_menu_active";
+        }
+        isMenuExpanded = !isMenuExpanded;
+        }
+        </script>
+        
+        
+    </body>
 </html>
